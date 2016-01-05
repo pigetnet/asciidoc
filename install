@@ -1,0 +1,18 @@
+#!/bin/bash
+# STATE: ALPHA
+
+/show/description "Install asciidoc converter"
+
+/show/listecho "Install asciidoc, this will takes some times" $OK
+#We install it with output as it will takes a lot of times
+apt-get install -y asciidoc
+
+/show/listecho "Install highlight for source code" $OK
+/system/install source-hightlight
+
+/show/listecho "Install bootstrap 4.5.0 backend" $OK
+wget http://laurent-laville.org/asciidoc/bootstrap/bootstrap-4.5.0.zip -O /tmp/bootstrap.zip
+asciidoc --backend install /tmp/bootstrap.zip
+
+
+

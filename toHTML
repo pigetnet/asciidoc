@@ -3,7 +3,7 @@
 
 if [[ $# -eq 1 ]];then
 	if [[ -e $1 ]];then
-		asciidoctor -a data-uri -a icons=font -a source-highlighter=highlightjs -a toc $1
+		asciidoctor -a data-uri -s -a icons=font -a source-highlighter=highlightjs -a toc $1
 	else
 		echo "$1 doesn't exists"
 	fi
